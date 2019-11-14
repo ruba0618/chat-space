@@ -11,16 +11,18 @@
 - has_many :groups, through: :members
 - has_many :groups_users
 
+
 ##  groups table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false,foreign_key: true|
+|name|string|null: false|
 
 ##Association
 has_many :users, through: :groups_users
 has_many :messages
 has_many :groups_users
- 
+
+
 ## message table
 |Column|Type|Options|
 |------|----|-------|
@@ -29,8 +31,12 @@ has_many :groups_users
 |user_id|integer|null: false,foreign_key: true|
 |group_id|integer|null: false,foreign_key: true|
 
-## groups_usersテーブル
+## Association
+- belongs_to :group
+- belongs_to :user
 
+
+## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|

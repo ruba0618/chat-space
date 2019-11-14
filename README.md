@@ -26,7 +26,7 @@ has_many :groups_users
 ## messages table
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false,foreign_key: true|
+|text|text|null: false|
 |image|string||
 |user_id|integer|null: false,foreign_key: true|
 |group_id|integer|null: false,foreign_key: true|

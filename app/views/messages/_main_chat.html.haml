@@ -1,0 +1,34 @@
+.main_chat  
+  .main_chat__header
+    .left
+      .name 
+        group&nbsp;name
+      .member
+        Member
+    .right
+      .edit
+        = link_to "/", class:"editor" do
+          Edit
+  .main_chat__group
+    .message
+      .upper_message
+        .user 
+          shouya
+        .day
+          2019/10/08/19:14:39
+      .lower_message
+        .comment
+          this is a first message
+    .under_comment
+      .type_message
+        %input.input-text{:comment => "comment", :placeholder => "type a message",}/
+        .picture
+          %label{class: "input-box__image"}
+            = icon("fas", "image")
+            %input{type: "file"}
+            -# = link_to "/",class: "icon" do
+          
+      .send
+        = link_to "/", class:"send-btn" do
+          send       
+

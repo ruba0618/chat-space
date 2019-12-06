@@ -14,10 +14,12 @@
     height:82px;
     .name{
       font-size: 16px;
+      width: 150px;
+      padding: 0 100px 0 0;
     }
     .list{
       display: flex;
-      margin-left: 200px;
+      margin-right: 10px;
       &__edit{
         .icon{
           color:white;

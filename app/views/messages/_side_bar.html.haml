@@ -4,19 +4,17 @@
       = current_user.name
     .list
       .list__edit
-        = link_to "/",class: "icon" do
+        = link_to new_group_path ,class: "icon" do
           = icon('fas', 'edit')
       .list__setting 
         = link_to edit_user_path(current_user),class:"icon" do
           = icon('fas', 'cog')
 
-  .side_bar__group
-    .user
-      .user__name 
-        Sample
-      .user__message 
-        Good bye world
-    .user
-      .user__name 
-
-      .user__message 
+  .side_bar__group 
+    - current_user.groups.each do |group|
+      .user
+        = link_to group_messages_path(group) do
+          .user__name 
+            = group.name
+          .user__message 
+            メッセージはまだありません。

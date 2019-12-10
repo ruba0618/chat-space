@@ -2,14 +2,17 @@
   .main_chat__header
     .left
       .name 
-        group&nbsp;name
+        = @group.name
       .member
-        Member
+        Members:
+        - @group.users.each do |user|
+          = user.name
     .right
       .edit
-        = link_to "/", class:"editor" do
+        = link_to edit_group_path(@group),class:"editor" do
           Edit
   .main_chat__group
+    = render @messages
     .message
       .upper_message
         .user 
@@ -21,13 +24,12 @@
           this is a first message
     .under_comment
       .type_message
-        %input.input-text{class: 'comment', placeholder: 'type a message'}
-        .picture
-          %label{class: "input-box__image"}
-            = icon("fas", "image")
-            %input{type: "file"}
-          
-      .send
-        = link_to "/", class:"send-btn" do
-          send       
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          .picture
+            = f.label :image, class: 'form__mask__image' do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'hidden'
+          .send
+            = f.submit 'Send', class: 'form__submit'
 

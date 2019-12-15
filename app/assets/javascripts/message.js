@@ -15,10 +15,10 @@ $(function(){
       <p class="lower-message__content">
       
       </p>
-      <img class="lower-message__image" src="${message.image}" alt="Arrow top">
+      <img class="lower-message__image" src="${message.image}">
       </div>
       </div>`
-    }
+      }
      else {
       var html = `<div class="message">
       <div class="upper-message">

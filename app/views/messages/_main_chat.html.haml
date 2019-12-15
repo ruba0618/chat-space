@@ -13,23 +13,16 @@
           Edit
   .main_chat__group
     = render @messages
-    .message
-      .upper_message
-        .user 
-          shouya
-        .day
-          2019/10/08/19:14:39
-      .lower_message
-        .comment
-          this is a first message
-    .under_comment
-      .type_message
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-          .picture
-            = f.label :image, class: 'form__mask__image' do
-              = icon('fas', 'image', class: 'icon')
-              = f.file_field :image, class: 'hidden'
-          .send
-            = f.submit 'Send', class: 'form__submit'
+    .upper_message
+ 
+  .under_comment
+    .type_message
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .picture
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        .send
+          = f.submit 'Send', class: 'form__submit'
 

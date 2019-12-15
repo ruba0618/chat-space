@@ -47,6 +47,7 @@
 
 
   &__group{
+    overflow: scroll;
     width: 100%;
     float: left;
     height: calc(100vh - 102px);
@@ -56,34 +57,16 @@
       padding: 40px 0 0 40px;
       .upper_message{
         display: flex;
-        .user{
-          font-size:16px;
-          font-weight: bold; 
-          color: #434A54;
-            }
-        .day{
-          padding: 0 0 0 10px;
-          font-size: 12px;
-          color: #999999;
-            }
           }
-      .lower_message{
-        padding: 10px 0 0 0;
-        .message{
-          width: calc(100% - 40px);
-          font-size: 14px;
-          color:#434A54;
-        }
-      }
     }
+  }
     .under_comment{
-
       display: flex;
       box-sizing: border-box;
       position: absolute;
       bottom: 0;
       height: 90px;
-      width: calc(100% - 0px);
+      width: calc(100% - 300px);
       background-color: #ddd;
       .type_message{
         padding: 20px 0 20px 40px;
@@ -130,6 +113,5 @@
           }
           }
         }
-      }
-    }
+  }
   }

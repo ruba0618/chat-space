@@ -18,7 +18,7 @@ $(function(){
       </p>
       <img class="lower-message__image" src="${message.image}" alt="Arrow top">
       </div>
-      </div>
+      </div>`
     }
      else {
       var html = `<div class="message">

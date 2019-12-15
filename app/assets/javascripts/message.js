@@ -4,37 +4,35 @@ $(function(){
     if (message.image) {
       var html = `<div class="message">
       <div class="upper-message">
-      <div class="upper-message__user-name">
+        <div class="upper-message__user-name">
       
-      </div>
-      <div class="upper-message__date">
-      
-      </div>
+        </div>
+        <div class="upper-message__date">
+        </div>
+
       </div>
       <div class="lower-message">
-      <p class="lower-message__content">
-      
-      </p>
-      <img class="lower-message__image" src="${message.image}">
-      </div>
+        <p class="lower-message__content">
+        </p>
+        <img class="lower-message__image" src="${message.image}">
+        </div>
       </div>`
       }
      else {
       var html = `<div class="message">
       <div class="upper-message">
-      <div class="upper-message__user-name">
+        <div class="upper-message__user-name">
       
-      </div>
-      <div class="upper-message__date">
-      
-      </div>
+        </div>
+        <div class="upper-message__date">
+        </div>
+
       </div>
       <div class="lower-message">
-      <p class="lower-message__content">
-      
-      </p>
+        <p class="lower-message__content">
+        </p>
       </div>
-      </div>`//メッセージに画像が含まれない場合のHTMLを作る
+      </div>`
       }
     return html
     }
@@ -59,7 +57,7 @@ $(function(){
       $('.main_chat__group').animate({ scrollTop: $('.main_chat__group')[0].scrollHeight});
       $('form')[0].reset();
       })
-      
+
     .fail(function() {
       alert("メッセージ送信に失敗しました");
     });

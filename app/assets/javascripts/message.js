@@ -35,14 +35,13 @@ $(function(){
       </p>
       </div>
       </div>`//メッセージに画像が含まれない場合のHTMLを作る
-    }
+      }
     return html
-  }
+    }
   
   
   $(".new_message").on("submit", function(e){
     e.preventDefault()
- 
     var url = $("#new_message").attr("action");
     formData = new FormData(this);
     $.ajax({
@@ -52,16 +51,18 @@ $(function(){
       dataType: 'json',
       processData: false,
       contentType: false
-    })
+      })
+
     .done(function(data){
       var html = buildHTML(data);
       $('.main_chat__group').append(html);
       $('.main_chat__group').animate({ scrollTop: $('.main_chat__group')[0].scrollHeight});
       $('form')[0].reset();
-    })
+      })
+      
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-  });
+    });
   })
 })
 

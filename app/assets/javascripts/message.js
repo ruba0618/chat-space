@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    console.log(message);
     // 「もしメッセージに画像が含まれていたら」という条件式
     if (message.image) {
       var html = `<div class="message">
@@ -58,6 +57,7 @@ $(function(){
       var html = buildHTML(data);
       $('.main_chat__group').append(html);
       $('.main_chat__group').animate({ scrollTop: $('.main_chat__group')[0].scrollHeight});
+      $('form')[0].reset();
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");

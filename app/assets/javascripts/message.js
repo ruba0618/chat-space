@@ -73,6 +73,11 @@ $(function(){
   
       .fail(function() {
         alert("メッセージ送信に失敗しました");
+      })
+      
+      .always(function(){
+        console.log($('.form__submit'))
+        $('.form__submit').removeAttr('disabled')
       });
     })
   

@@ -26,15 +26,24 @@ $(function() {
     $(".js-add-user").append(html);
   }
   function addMember(userId) {
-    let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
+    let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" class="js-user"/>`;
     $(`#${userId}`).append(html);
   }
   $("#user-search-field").on("keyup", function() {
     let input = $("#user-search-field").val();
+
+
+    var x = $('.js-user');
+    var arr = [];
+    x.each(function(i,ele){
+      arr.push(ele.value)
+    })
+console.log(arr)
+
     $.ajax({
       type: "GET",
       url: "/users",
-      data: { keyword: input },
+      data: { keyword: input,user_id: arr },
       dataType: "json"
     })
       .done(function(users) {

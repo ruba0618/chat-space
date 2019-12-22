@@ -76,7 +76,6 @@ $(function(){
       })
       
       .always(function(){
-        console.log($('.form__submit'))
         $('.form__submit').removeAttr('disabled')
       });
     })

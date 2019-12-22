@@ -38,7 +38,6 @@ $(function() {
     x.each(function(i,ele){
       arr.push(ele.value)
     })
-console.log(arr)
 
     $.ajax({
       type: "GET",
